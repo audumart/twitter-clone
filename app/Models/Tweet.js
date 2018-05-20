@@ -2,11 +2,19 @@
 
 const Model = use('Model')
 
-user (){
-    return this.belongsTo('App/Models/User')
-}
+
 
 class Tweet extends Model {
+    user () {
+        return this.belongsTo('App/Models/User')
+    }
 }
 
 module.exports = Tweet
+function newFunction() {
+    user();
+    {
+        return this.belongsTo('App/Models/User');
+    }
+}
+
