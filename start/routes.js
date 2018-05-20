@@ -21,10 +21,12 @@ Route.group(() => {
   Route.get('/me', 'UserController.me')
   Route.put('/update_profile', 'UserController.updateProfile')
 })
-
-  .prefix('account')
+.prefix('account')
   .middleware(['auth:jwt'])
 
+Route.put('/change_password', 'UserController.changePassword');
+
+  
 Route.get('/', ({ request }) => {
   return { greeting: 'Hello world in JSON' }
 })
