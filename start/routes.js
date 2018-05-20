@@ -25,6 +25,7 @@ Route.group(() => {
   .middleware(['auth:jwt'])
 
 Route.put('/change_password', 'UserController.changePassword');
+Route.get(':username', 'UserController.showProfile')
 
   
 Route.get('/', ({ request }) => {
