@@ -15,7 +15,9 @@ class User extends Model {
      */
     this.addHook('beforeCreate', 'User.hashPassword')
   }
-
+  tweets() {
+    return this.hasMany('App/Models/Tweet')
+  }
   /**
    * A relationship on tokens is required for auth to
    * work. Since features like `refreshTokens` or
